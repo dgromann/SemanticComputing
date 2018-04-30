@@ -11,9 +11,9 @@ categories =  ['alt.atheism', 'soc.religion.christian', 'comp.graphics', 'sci.me
 
 twenty_train = fetch_20newsgroups(subset='train', categories=categories, shuffle=True, random_state=42)
 
-print("The obtained cagories are the ones provided: ", twenty_train.target_names)
+print("The obtained categories are the ones provided: ", twenty_train.target_names)
 print("Can be addressed using data: ", len(twenty_train.data))
-print("The filenames are available: ", len(twenty_train.filenames))
+print("The file names are available: ", len(twenty_train.filenames))
 
 print("First line of the first loaded file: ", "\n".join(twenty_train.data[0].split("\n")[:3]))
 
@@ -28,7 +28,7 @@ for topic in twenty_train.target[:10]:
 #documents are transformed to feature vectors
 count_vec = CountVectorizer()
 X_train_counts = count_vec.fit_transform(twenty_train.data)
-print(X_train_counts.shape)
+print("Number of documents and length of vocabulary ", X_train_counts.shape)
 
 #In this dictionary we can address specific words where the index value is linked to its frequency in the whole training corpus
 print("Frequency of algorithm ", count_vec.vocabulary_.get('algorithm'))
@@ -42,6 +42,7 @@ X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 print(X_train_tfidf.shape)
 
 #TODO: choose a naive bayes classifier from http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB
-#TODO: do the same pipeline to process the test data (twenty_test below) and then calculate the accuraccy of the clasifier using np.mean or something similar
+#TODO: do the same pipeline to process the test data and then calculate the accuraccy of the clasifier using np.mean or something similar
+
 
 twenty_test = fetch_20newsgroups(subset='test',categories=categories, shuffle=True, random_state=42)
