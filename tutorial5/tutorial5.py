@@ -1,16 +1,3 @@
-###
-###  Email parsing for Enron corpus
-###  Andrew T. Fiore
-###  <atf>
-###
-###  Applied Natural Language Processing
-###  November 2004
-###  
-###  UC-Berkeley SIMS
-###  http://www.sims.berkeley.edu
-###
-
-
 
 import re
 import string
