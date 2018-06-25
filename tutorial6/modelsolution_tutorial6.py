@@ -19,11 +19,7 @@ def visualize_embeddings(model):
 
 
 # Load the subset of the word2vec pre-trained embedding library trained on the Google News corpus
-model = gensim.models.KeyedVectors.load_word2vec_format('/Users/dgromann/DataCollections/word2vec/GoogleNews-vectors'
-                                                        '-negative300.bin', binary=True, limit=80000)
-
-model.wv.save_word2vec_format("word2vec_embeddings.bin", binary=True)
-#model = gensim.models.KeyedVectors.load_word2vec_format('word2vec_embeddings.bin', binary=True)
+model = gensim.models.KeyedVectors.load_word2vec_format('word2vec_embeddings.bin', binary=True)
 
 #EXERCISE 1:
 #This is how you obtain a specific vector for a word
