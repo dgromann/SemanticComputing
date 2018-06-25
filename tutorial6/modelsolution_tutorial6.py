@@ -80,7 +80,7 @@ news_model = gensim.models.KeyedVectors.load_word2vec_format('20newsgroup.bin', 
 # #TODO: Load the file analogy.txt and evaluate your embeddings and the model embeddings on this dataset by predicting the last word in each line
 # # You input the first three words in the correct order into the analogy task and then check whether the top 3 predictions contain the correct answer
 
-evalFile = open("data/analogy.txt")
+evalFile = open("analogy.txt")
 evalLines = evalFile.readlines()
 
 corr = 0
