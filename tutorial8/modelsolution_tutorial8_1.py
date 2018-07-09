@@ -20,41 +20,39 @@ with tf.Session() as session1:
     print("Exercise 1a: What about now? ", session1.run(y))
 
 
-# # Exercise 1b: What about arrays?
-# # TODO: try to predict what this code will do
-# a = tf.constant([35, 40, 45], name='a')
-# b = tf.Variable(a + 5, name='b')
-#
-#
-# model2 = tf.global_variables_initializer()
-#
-# with tf.Session() as session2:
-#     session2.run(model2)
-#     print("Exercise 1b: And for an array ", session2.run(b))
+# Exercise 1b: What about arrays?
+# TODO: try to predict what this code will do
+a = tf.constant([35, 40, 45], name='a')
+b = tf.Variable(a + 5, name='b') 
+model2 = tf.global_variables_initializer()
 
-# # Exercise 1c: We can also assign values dynamically
-# # TODO: try to predict what this code will do
-# x = tf.Variable(0, name='x')
-#
-# model = tf.global_variables_initializer()
-#
-# with tf.Session() as session:
-#     session.run(model)
-#     for i in range(5):
-#         x = x + 1
-#         print("Exercise 1c: Dynmamic assignment ", session.run(x))
+with tf.Session() as session2:
+     session2.run(model2)
+     print("Exercise 1b: And for an array ", session2.run(b))
 
-# # Exercise 1d: Understanding placeholders
-# # TODO: try to predict what this code will do
-# # Placeholders are used for training data which is fed into the code when running the model
-# a = tf.placeholder("float")
-# b = tf.placeholder("float")
-# y = tf.multiply(a, b)
-#
-# feed_dict ={a: 2, b: 3}
-#
-# with tf.Session() as sess:
-#     print(sess.run(y, feed_dict))
+# Exercise 1c: We can also assign values dynamically
+# TODO: try to predict what this code will do
+x = tf.Variable(0, name='x')
+
+model = tf.global_variables_initializer()
+
+with tf.Session() as session:
+    session.run(model)
+     for i in range(5):
+         x = x + 1
+         print("Exercise 1c: Dynmamic assignment ", session.run(x))
+
+# Exercise 1d: Understanding placeholders
+# TODO: try to predict what this code will do
+# Placeholders are used for training data which is fed into the code when running the model
+a = tf.placeholder("float")
+b = tf.placeholder("float")
+y = tf.multiply(a, b)
+
+feed_dict ={a: 2, b: 3}
+
+with tf.Session() as sess:
+     print(sess.run(y, feed_dict))
 
 #Exercise 1e: Use the above exercises to fill in the code template below
 #TODO: Calculate the max value (tf.argmax) and the average (tf.reduce_mean) of the random numpy array (data)
